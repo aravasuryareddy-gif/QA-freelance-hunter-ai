@@ -1,0 +1,40 @@
+{
+  "candidate": "Surya Prakash Reddy Arava",
+  "location": "India",
+  "target_markets": [
+    "USA",
+    "Canada",
+    "UK",
+    "Australia",
+    "Europe"
+  ],
+  "experience_summary": "4+ years in software testing (resume baseline; verify before applications)",
+  "roles": [
+    "Freelance QA Tester",
+    "Manual QA Engineer",
+    "API Tester",
+    "Mobile Application Tester",
+    "Web Application Tester",
+    "Software QA Engineer"
+  ],
+  "skills": [
+    "Manual Testing",
+    "API Testing",
+    "Postman",
+    "Newman",
+    "Appium",
+    "pytest",
+    "Playwright",
+    "Selenium",
+    "Azure DevOps",
+    "Azure Test Plans",
+    "Azure Pipelines",
+    "Jenkins",
+    "Salesforce Testing",
+    "SQL",
+    "Regression Testing"
+  ],
+  "playwright_note": "Represent experience only as supported by the candidate's actual project work; do not invent years or proficiency.",
+  "application_mode": "prepare_for_user_approval",
+  "minimum_hourly_rate": null
+}
