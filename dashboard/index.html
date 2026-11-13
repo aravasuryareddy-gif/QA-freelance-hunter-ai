@@ -1,47 +1,363 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>QA Freelance Hunter AI</title>
+
 <style>
-:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#172033;background:#f5f7fb}
-*{box-sizing:border-box}body{margin:0}.wrap{max-width:1120px;margin:auto;padding:28px}
-header{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:24px}
-h1{font-size:26px;margin:0 0 6px}.sub{color:#64748b;font-size:14px}
-.pill{background:#fff4d6;color:#875d00;border:1px solid #f1d995;padding:7px 11px;border-radius:99px;font-size:12px;font-weight:700}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0}
-.card,.panel{background:white;border:1px solid #e5eaf2;border-radius:14px;padding:18px;box-shadow:0 2px 8px #17203308}
-.metric{font-size:25px;font-weight:750;margin-top:8px}.muted{color:#64748b;font-size:13px}
-.layout{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
-h2{font-size:16px;margin:0 0 14px}.tag{display:inline-block;background:#eef2ff;color:#384a9b;border-radius:6px;padding:4px 7px;font-size:11px;margin:3px 3px 0 0}
-.row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #edf0f5}
-button{border:0;border-radius:8px;background:#253c8f;color:white;padding:9px 12px;font-weight:650;cursor:pointer}
-button.secondary{background:#edf1f7;color:#253047}
-input{width:100%;padding:10px;border:1px solid #d9e0ea;border-radius:8px;margin:8px 0 12px}
-.note{background:#f8fafc;border-left:3px solid #94a3b8;padding:10px 12px;color:#475569;font-size:13px;border-radius:4px}
-@media(max-width:760px){.cards{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}}
-</style></head>
-<body><main class="wrap">
-<header><div><h1>QA Freelance Hunter AI</h1><div class="sub">International freelance QA opportunity workspace</div></div><span class="pill">SETUP MODE · NOT CONNECTED TO JOB BOARDS</span></header>
-<section class="cards">
-<div class="card"><div class="muted">Candidate profile</div><div class="metric">Ready</div><div class="muted">QA testing · India</div></div>
-<div class="card"><div class="muted">Target markets</div><div class="metric">5</div><div class="muted">US · Canada · UK · Australia · Europe</div></div>
-<div class="card"><div class="muted">Job sources</div><div class="metric">0</div><div class="muted">Connectors not configured</div></div>
-<div class="card"><div class="muted">Applications sent</div><div class="metric">0</div><div class="muted">Approval required before submission</div></div>
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.wrap {
+  max-width: 1120px;
+  margin: auto;
+  padding: 28px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+h1 { font-size: 26px; margin: 0 0 6px; }
+.sub { color: #64748b; font-size: 14px; }
+
+.pill {
+  background: #fff4d6;
+  color: #875d00;
+  border: 1px solid #f1d995;
+  padding: 7px 11px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.card, .panel {
+  background: white;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 8px #17203308;
+}
+
+.metric {
+  font-size: 25px;
+  font-weight: 750;
+  margin-top: 8px;
+}
+
+.muted { color: #64748b; font-size: 13px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+}
+
+h2 { font-size: 16px; margin: 0 0 14px; }
+
+.tag {
+  display: inline-block;
+  background: #eef2ff;
+  color: #384a9b;
+  border-radius: 6px;
+  padding: 4px 7px;
+  font-size: 11px;
+  margin: 3px 3px 0 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #edf0f5;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  background: #253c8f;
+  color: white;
+  padding: 9px 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #edf1f7;
+  color: #253047;
+}
+
+.note {
+  background: #f8fafc;
+  border-left: 3px solid #94a3b8;
+  padding: 10px 12px;
+  color: #475569;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.job-card {
+  border: 1px solid #e5eaf2;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 12px;
+}
+
+.job-card h3 {
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+.job-card p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.job-card a {
+  color: #253c8f;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.api-status {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+@media(max-width:760px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .layout { grid-template-columns: 1fr; }
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+<header>
+  <div>
+    <h1>QA Freelance Hunter AI</h1>
+    <div class="sub">International freelance QA opportunity workspace</div>
+  </div>
+  <span class="pill">SETUP MODE · NOT CONNECTED TO JOB BOARDS</span>
+</header>
+
+<!-- New API-connected opportunities section -->
+<section class="panel">
+  <h2>Latest QA Opportunities</h2>
+  <div id="apiStatus" class="api-status">
+    Connecting to jobs API...
+  </div>
+  <div id="jobsList" aria-live="polite">
+    Please wait while opportunities are loaded.
+  </div>
+  <button type="button" class="secondary" id="refreshJobs">
+    Refresh opportunities
+  </button>
 </section>
+
+<section class="cards">
+  <div class="card">
+    <div class="muted">Candidate profile</div>
+    <div class="metric">Ready</div>
+    <div class="muted">QA testing · India</div>
+  </div>
+
+  <div class="card">
+    <div class="muted">Target markets</div>
+    <div class="metric">5</div>
+    <div class="muted">US · Canada · UK · Australia · Europe</div>
+  </div>
+
+  <div class="card">
+    <div class="muted">Job sources</div>
+    <div class="metric">0</div>
+    <div class="muted">Connectors not configured</div>
+  </div>
+
+  <div class="card">
+    <div class="muted">Applications sent</div>
+    <div class="metric">0</div>
+    <div class="muted">Approval required before submission</div>
+  </div>
+</section>
+
 <section class="layout">
-<div class="panel"><h2>Target roles</h2>
-<span class="tag">Manual QA</span><span class="tag">API Testing</span><span class="tag">Mobile Testing</span><span class="tag">Web Testing</span><span class="tag">Playwright</span><span class="tag">Appium</span><span class="tag">Salesforce Testing</span>
-<div class="row"><div><b>Job matching</b><div class="muted">Skills, remote eligibility, contract fit and restrictions</div></div><span class="pill">Planned</span></div>
-<div class="row"><div><b>Proposal drafting</b><div class="muted">Tailored drafts using verified resume details</div></div><span class="pill">Planned</span></div>
-<div class="row"><div><b>Application tracker</b><div class="muted">Save opportunity, status, date and follow-up</div></div><span class="pill">Planned</span></div>
-</div>
-<div class="panel"><h2>Candidate profile</h2>
-<b>Surya Prakash Reddy Arava</b><p class="muted">4+ years stated on the supplied resume. Current role profile: Test Engineer, Kestra Holdings / ANSR India.</p>
-<div class="note">Playwright proficiency and each project claim must be confirmed against actual hands-on work before proposals are generated. No invented experience or screening answers.</div>
-<h2 style="margin-top:18px">Application policy</h2>
-<p class="muted">Prepare applications for your review first. Automated submission is disabled until a source's rules and permitted workflow are checked.</p>
-<button class="secondary" onclick="alert('No job-board account is connected yet. Add an approved source connector in the next setup stage.')">View connection status</button>
-</div></section>
-<p class="muted" style="margin-top:18px">Demo dashboard only. It contains no live listings and does not connect to Upwork, LinkedIn, or other platforms.</p>
-</main></body></html>
+
+  <div class="panel">
+    <h2>Target roles</h2>
+
+    <span class="tag">Manual QA</span>
+    <span class="tag">API Testing</span>
+    <span class="tag">Mobile Testing</span>
+    <span class="tag">Web Testing</span>
+    <span class="tag">Playwright</span>
+    <span class="tag">Appium</span>
+    <span class="tag">Salesforce Testing</span>
+
+    <div class="row">
+      <div>
+        <b>Job matching</b>
+        <div class="muted">Skills, remote eligibility, contract fit and restrictions</div>
+      </div>
+      <span class="pill">Planned</span>
+    </div>
+
+    <div class="row">
+      <div>
+        <b>Proposal drafting</b>
+        <div class="muted">Tailored drafts using verified resume details</div>
+      </div>
+      <span class="pill">Planned</span>
+    </div>
+
+    <div class="row">
+      <div>
+        <b>Application tracker</b>
+        <div class="muted">Save opportunity, status, date and follow-up</div>
+      </div>
+      <span class="pill">Planned</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Candidate profile</h2>
+
+    <b>Surya Prakash Reddy Arava</b>
+    <p class="muted">
+      4+ years stated on the supplied resume.
+      Current role profile: Test Engineer, Kestra Holdings / ANSR India.
+    </p>
+
+    <div class="note">
+      Playwright proficiency and each project claim must be confirmed
+      against actual hands-on work before proposals are generated.
+      No invented experience or screening answers.
+    </div>
+
+    <h2 style="margin-top:18px">Application policy</h2>
+
+    <p class="muted">
+      Prepare applications for your review first. Automated submission
+      is disabled until a source's rules and permitted workflow are checked.
+    </p>
+
+    <button class="secondary" type="button"
+      onclick="alert('No job-board account is connected yet. Add an approved source connector in the next setup stage.')">
+      View connection status
+    </button>
+  </div>
+
+</section>
+
+<p class="muted" style="margin-top:18px">
+  Demo dashboard only. It does not yet connect to Upwork, LinkedIn,
+  or other freelance platforms.
+</p>
+
+</main>
+
+<script>
+const apiStatus = document.getElementById("apiStatus");
+const jobsList = document.getElementById("jobsList");
+const refreshButton = document.getElementById("refreshJobs");
+
+async function loadJobs() {
+  apiStatus.textContent = "Connecting to jobs API...";
+  jobsList.textContent = "Loading opportunities...";
+
+  try {
+    const response = await fetch("/api/jobs");
+
+    if (!response.ok) {
+      throw new Error("API returned status " + response.status);
+    }
+
+    const data = await response.json();
+    const jobs = Array.isArray(data.jobs) ? data.jobs : [];
+
+    apiStatus.textContent = "Jobs API connected successfully.";
+
+    if (jobs.length === 0) {
+      jobsList.textContent =
+        "API is working, but no job listings are available yet.";
+      return;
+    }
+
+    jobsList.replaceChildren();
+
+    jobs.forEach(job => {
+      const card = document.createElement("article");
+      card.className = "job-card";
+
+      const title = document.createElement("h3");
+      title.textContent = job.title || "Untitled opportunity";
+      card.appendChild(title);
+
+      const company = document.createElement("p");
+      company.textContent = job.company || "Company not specified";
+      card.appendChild(company);
+
+      const description = document.createElement("p");
+      description.textContent = job.description || "";
+      card.appendChild(description);
+
+      if (job.url) {
+        try {
+          const url = new URL(job.url);
+
+          if (url.protocol === "https:" || url.protocol === "http:") {
+            const link = document.createElement("a");
+            link.href = url.href;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = "View opportunity";
+            card.appendChild(link);
+          }
+        } catch {
+          // Ignore invalid job links.
+        }
+      }
+
+      jobsList.appendChild(card);
+    });
+
+  } catch (error) {
+    apiStatus.textContent = "Could not connect to the jobs API.";
+    jobsList.textContent =
+      error instanceof Error ? error.message : "An unexpected error occurred.";
+  }
+}
+
+refreshButton.addEventListener("click", loadJobs);
+loadJobs();
+</script>
+
+</body>
+</html>
